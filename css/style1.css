@@ -1,0 +1,17 @@
+.logo-m{
+   /* border: 1px solid black;*/
+    width:90px;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    background:#F5F5F5;
+    left: 90px;
+
+}
+.logo-m p{
+    height:26px;
+    margin:-5px 0px 0px 10px;
+    color:#f03726;
+    font-family:'Edwardian Script ITC';
+    font-size: 40px;
+}
