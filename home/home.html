@@ -754,7 +754,8 @@
 
 					<div class="am-g am-g-fixed recommendation">
 						<div class="clock am-u-sm-3">
-							<img src="../images/2016.png "></img>
+							<!--<img src="../images/today.png"></img>-->
+							<p style="margin-left: 30%;">2019</p>
 							<p>今日<br>推荐</p>
 						</div>
 						<div class="am-u-sm-4 am-u-lg-3 ">
@@ -876,8 +877,6 @@
 
                     var fn =function(){
                         var a = rnd(1,4);
-                        console.log(a);
-
                         if(a==1){
                             var $bannerUl=$('#banner1 ul'),$bannerLi=$('#banner1 ul li');
                         }else if(a==2){
@@ -898,7 +897,6 @@
                                 $(this).animate({'marginLeft':0},0)
                                     .find('.slider').eq(0).appendTo($(this));
                                 i=i+1;
-                                console.log("i的值："+i);
                                 if(i==3){
                                     clearInterval(id);
                                     setTimeout(fn,1000);
