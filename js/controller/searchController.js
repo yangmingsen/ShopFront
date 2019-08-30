@@ -4,6 +4,7 @@ app.controller('searchController',function ($scope,$location, searchService) {
     //加载查询字符串
     $scope.loadkeywords=function(){
         $scope.searchMap.keywords=  $location.search()['keywords'];
+        console.log("keyword = "+$scope.searchMap.keywords);
         $scope.search();
     }
     //搜索
@@ -13,7 +14,7 @@ app.controller('searchController',function ($scope,$location, searchService) {
                 $scope.resultMap=response;//搜索返回的结果
                 console.log( $scope.resultMap);
                 for (var i=0; i<$scope.resultMap.items.length; i++) {
-                    console.log($scope.resultMap.items[i].id)
+                    console.log("data = "+$scope.resultMap.items[i].id)
                 }
 
             }

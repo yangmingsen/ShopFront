@@ -15,12 +15,18 @@
 		<link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
 		<link href="../css/skin.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../css/home.css"/>
+
+		<script type="text/javascript" src="../plugins/angularjs/angular.min.js">  </script>
+		<script type="text/javascript" src="../js/base.js">  </script>
+		<script type="text/javascript" src="../js/service/homeService.js">  </script>
+		<script type="text/javascript" src="../js/controller/homeController.js">  </script>
+
 		<script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 
 	</head>
 
-	<body>
+	<body ng-app="shopFront" ng-controller="homeController">
 		<div class="hmtop">
 			<!--顶部导航条 -->
 			<div class="am-container header">
@@ -58,8 +64,8 @@
 					<div class="search-bar pr">
 						<a name="index_none_header_sysc" href="#"></a>
 						<form>
-							<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-							<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+							<input ng-model="keywords" id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+							<input ng-click="search()" id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="button">
 						</form>
 					</div>
 				</div>
