@@ -14,11 +14,18 @@
 
 		<link href="../css/seastyle.css" rel="stylesheet" type="text/css" />
 
+		<!--    angularJs settingfile-->
+		<script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+		<script type="text/javascript" src="../js/base.js"></script>
+		<script type="text/javascript" src="../js/service/searchService.js"></script>
+		<script type="text/javascript" src="../js/controller/searchController.js"></script>
+
+
 		<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="../js/script.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="shopFront" ng-controller="searchController" ng-init="loadkeywords()">
 
 		<!--顶部导航条 -->
 		<div class="am-container header">
