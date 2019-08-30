@@ -90,11 +90,12 @@ vertical-align: top;margin-top: 5px;margin-left: -24px;color: #b5b5b5;font-size:
 
 
 /*布局*/
-.td-price, .td-number{margin-top: 23px;}
+.td-price, .td-number{/*margin-top: 23px;*/margin-top: 45px;}
 .th-item,.td-item{width:67%;overflow: hidden;}
 .th-price,.td-price{position:static;width:10%;text-align: center;}
 .th-number,.td-number{position:static;width:8%;text-align: center;}
 .th-operation,.td-operation{position:static;width:15%;text-align: center;}
+    .td-operation{margin-top: 45px;} /**/
 .th-amount,.th-status,.th-change{display: none;}
 .td-amount{font-size:16px;}
 .td-status p.Mystatus{text-align: center;width:15%;top:-30px;}
