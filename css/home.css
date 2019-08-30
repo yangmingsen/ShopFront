@@ -1,0 +1,27 @@
+#bannerTop .am-u-sm-3 ul li{
+		float:left;
+	}
+	#bannerTop .am-u-sm-3 {
+		margin-left: 0;
+		overflow:hidden; 
+	}
+	
+	
+  #bannerTop .am-u-sm-3 {
+		width:291px;
+		height:315px;
+		margin-right: 9px;
+		overflow:hidden; 
+	}
+	#bannerTop .am-u-sm-3 ul {
+		height:315px;
+	}
+	#bannerTop .am-u-sm-3 ul li {
+		width:291px;
+		height:315px;
+		float:left;
+	}
+	#bannerTop .am-u-sm-3 ul li img {
+		width:291px;
+		height:315px;
+	}
