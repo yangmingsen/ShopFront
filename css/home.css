@@ -25,3 +25,13 @@
 		width:291px;
 		height:315px;
 	}
+
+
+	#shopFonts{
+		margin-left: 36%;
+		margin-top: -9%;
+		font-size: 45px;
+		color: orange;
+		font-family: fantasy;
+		letter-spacing: 7px;
+	}
