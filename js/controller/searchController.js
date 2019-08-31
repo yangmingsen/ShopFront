@@ -12,13 +12,16 @@ app.controller('searchController',function ($scope,$location, searchService) {
         searchService.search( $scope.searchMap ).success(
             function(response){
                 $scope.resultMap=response;//搜索返回的结果
-                console.log( $scope.resultMap);
-                for (var i=0; i<$scope.resultMap.items.length; i++) {
-                    console.log("data = "+$scope.resultMap.items[i].id)
-                }
-
             }
         );
     }
+
+    $scope.loadkey = function () {
+        $scope.searchMap.keywords = $scope.key;
+        console.log("keyword = "+$scope.searchMap.keywords);
+        $scope.search();
+    }
+
+
 
 });
