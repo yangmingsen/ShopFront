@@ -4,11 +4,11 @@ app.controller('searchController',function ($scope,$location, searchService) {
     //加载查询字符串
     $scope.loadkeywords=function(){
         $scope.searchMap.keywords=  $location.search()['keywords'];
-        console.log("keyword = "+$scope.searchMap.keywords);
         $scope.search();
     }
     //搜索
     $scope.search=function(){
+
         searchService.search( $scope.searchMap ).success(
             function(response){
                 $scope.resultMap=response;//搜索返回的结果
@@ -18,7 +18,6 @@ app.controller('searchController',function ($scope,$location, searchService) {
 
     $scope.loadkey = function () {
         $scope.searchMap.keywords = $scope.key;
-        console.log("keyword = "+$scope.searchMap.keywords);
         $scope.search();
     }
 
