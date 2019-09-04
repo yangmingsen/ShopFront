@@ -67,11 +67,7 @@ app.controller('searchController',function ($scope,$location, searchService) {
 
     $scope.loadkey = function () {
         $scope.searchMap.keywords = $scope.key;
-<<<<<<< HEAD
         console.log("keyword = "+$scope.searchMap.keywords);
-
-=======
->>>>>>> origin/master
         $scope.search();
     }
 
