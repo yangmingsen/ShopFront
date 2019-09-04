@@ -6,15 +6,10 @@ app.controller('loginController',function ($scope,serviceShareData,loginService)
         $scope.userMap.username=$scope.username;
         $scope.userMap.password=$scope.password;
 
-        serviceShareData.addData("username",$scope.username);
-
-        alert("login success");
-        window.location.href="./home.html";
-
         loginService.login($scope.userMap).success(
             function (response) {
                 if (response.success) {
-                    alert("hello");
+                    serviceShareData.addData("username",$scope.username);
                     window.location.href="./home.html";
                 } else {
                     alert(response.message);

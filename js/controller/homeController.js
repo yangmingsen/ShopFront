@@ -6,6 +6,12 @@ app.controller('homeController',function ($scope,serviceShareData, homeService) 
     }
 
     $scope.load=function () {
-        $scope.username = serviceShareData.getData("username");
+        var user = serviceShareData.getData("username");
+        if (user != null) {
+            $scope.username=user;
+        } else {
+            $scope.username="";
+        }
+        console.log("usr = "+user);
     }
 });
