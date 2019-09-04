@@ -23,6 +23,13 @@
 
 		<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="../js/script.js"></script>
+
+		<style type="text/css">
+			.am-show{
+				display: block;
+			}
+		</style>
+
 	</head>
 
 	<body ng-app="shopFront" ng-controller="searchController" ng-init="loadkeywords()">
@@ -169,7 +176,7 @@
 								<div class="clear"></div>
 
 								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
-									<li ng-repeat="item in resultMap.items">
+									<li ng-repeat="item in resultMap2 | limitTo:listsPerPage">
 										<div class="i-pic limit">
 
 											<a href="introduction.html#?id={{item.id}}"><img src="{{item.image}}" /></a>
@@ -185,6 +192,7 @@
 									</li>
 
 								</ul>
+
 							</div>
 							<div class="search-side">
 
@@ -235,18 +243,79 @@
 							</div>
 							<div class="clear"></div>
 							<!--分页 -->
-							<ul class="am-pagination am-pagination-right">
-								<li class="am-disabled"><a href="#">&laquo;</a></li>
-								<li class="am-active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">&raquo;</a></li>
+							<ul class="am-pagination am-pagination-right" id="findPage">
+								<!--<li class="am-disabled"><a href="javascript:;" ng-click="prevPage()">&laquo;</a></li>-->
+								<li><a class="selectPages1" href="javascript:;" ng-click="prevPage()">&laquo;</a></li>
+								<li class="selects" id="startPage"><a class="selectPage" href="javascript:;" ng-click="toPage(0)" >1</a></li>
+								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(1)">2</a></li>
+								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(2)">3</a></li>
+								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(3)">4</a></li>
+								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(4)">5</a></li>
+								<li><a class="selectPages2" href="javascript:;" ng-click="nextPage()">&raquo;</a></li>
+                                <p id="currentPage" class="am-hide">{{currentPage+1}}</p>
+                                <p id="pages" class="am-hide">{{pages}}</p>
 							</ul>
-
 						</div>
 					</div>
+
+
+                <script>
+                    $(function(){
+                        $("#startPage").addClass("am-active");
+                        $(".am-hide").nextAll(".selects").css("display","none");
+
+                        var pages = $("#pages").text();
+                        var page =5;
+                        if(pages < page){
+                           var p = page-pages;
+                           if(p==1){
+                               $(".selects:eq(0)").nextAll(".selects").css("display","none");
+                           }else if(p==2){
+                               $(".selects:eq(1)").nextAll(".selects").css("display","none");
+                           }else if(p==3){
+                               $(".selects:eq(2)").nextAll(".selects").css("display","none");
+                           }else if(p==4){
+                               $(".selects:eq(3)").nextAll(".selects").css("display","none");
+                           }
+                        }
+
+                        $(".selectPage").click(function () {
+                            $(".am-active").removeClass("am-active");
+                            $(this).parent().addClass("am-active");
+                        });
+
+                        $(".selectPages2").click(function () {
+                            var currentPage =$("#currentPage").text();
+                            var pages =$("#pages").text();
+                            console.log("pages---currentPage:"+pages,currentPage);
+                            if($(".am-active").next(".selects").length==0){
+                                if(parseInt(currentPage) <= parseInt(pages)){
+                                    var t =$(".am-active").text();
+                                    var t1 =parseInt(t)+1;
+                                    console.log("t1t1---:"+t1);
+                                    $(".am-active").children("a").text(t1);
+                                }
+                            }else{
+                                $(".am-active").removeClass("am-active").next(".selects").addClass("am-active");
+                            }
+                        });
+
+                        $(".selectPages1").click(function () {
+                            var t1 =$(".am-active").text();
+                            var t2 =$(".am-active").prev(".selects").text();
+                            if((parseInt(t1)-1) == parseInt(t2)){
+                                $(".am-active").removeClass("am-active").prev(".selects").addClass("am-active");
+                            }else if((parseInt(t1)-1) > parseInt(t2)){
+                                var t =$(".am-active").text();
+                                var t1 =parseInt(t)-1;
+                                console.log("t1t1---:"+t1);
+                                $(".am-active").children("a").text(t1);
+                            }
+                        });
+                    });
+                </script>
+
+
 					<div class="footer">
 						<div class="footer-hd">
 							<p>
