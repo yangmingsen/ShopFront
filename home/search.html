@@ -28,6 +28,9 @@
 			.am-show{
 				display: block;
 			}
+            .am-actives{
+                background-color: cornflowerblue;
+            }
 		</style>
 
 	</head>
@@ -249,7 +252,7 @@
 							<!--分页 -->
 							<ul class="am-pagination am-pagination-right" id="findPage" ng-repeat="ite in data.fs">
 								<li><a class="selectPages1" href="javascript:;" ng-click="prevPage()" >&laquo;</a></li>
-								<li class="selects" id="startPage"><a class="selectPage" href="javascript:;" ng-click="toPage(ite.p1)" >{{ite.p1}}</a></li>
+								<li class="selects" id="startPage"><a  class="selectPage" href="javascript:;" ng-click="toPage(ite.p1)" >{{ite.p1}}</a></li>
 								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(ite.p2)">{{ite.p2}}</a></li>
 								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(ite.p3)">{{ite.p3}}</a></li>
 								<li class="selects"><a class="selectPage" href="javascript:;" ng-click="toPage(ite.p4)">{{ite.p4}}</a></li>
@@ -293,12 +296,19 @@
 
 						$(".selectPage").click(function () {
 							$(".am-active").removeClass("am-active");
+							$("#startPage").removeAttr("am-active");
 							$(this).parent().addClass("am-active");
 						});
 
 						$(".selectPages2").click(function () {
-                            $(".am-active").removeClass("am-active");
-                            $("#startPage").addClass("am-active");
+                           $(".am-active").removeClass("am-active");
+                                $("#startPage").addClass("am-active");
+                       //  $(".selects:eq(0)").children("a").css("background-color","black");
+                                //var str = document.getElementById("startPage");
+                               // console.log("str:"+str);
+                          //  $("#startPage").children("a").css("background-color","black");
+
+                        //    $("#startPage").attr("am-actives");
 							/*var aa =$(".am-active").text();
                              if(parseInt(aa)==5){
                                $(".am-hide").nextAll(".selects").css("display","inline-block");
