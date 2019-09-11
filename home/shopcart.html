@@ -21,6 +21,12 @@
 
     <script type="text/javascript" src="../js/jquery.js"></script>
 
+    <style type="text/css">
+        #item-images{
+            width: 100%;
+        }
+    </style>
+
 </head>
 
 <body ng-app="shopFront" ng-controller="cartController" ng-init="load()">
@@ -122,7 +128,7 @@
                             <div class="item-pic">
                                 <a href="#" target="_blank" data-title="{{cart.title}}"
                                    class="J_MakePoint" data-point="tbcart.8.12">
-                                    <img src="{{cart.image}}" class="itempic J_ItemImg"></a>
+                                    <img src="{{cart.image}}" class="itempic J_ItemImg" id="item-images"></a>
                             </div>
                             <div class="item-info">
                                 <div class="item-basic-info">
@@ -132,7 +138,7 @@
                             </div>
                         </li>
                         <li class="td td-info">
-                            <div class="item-props item-props-can">
+                            <div class="item-props item-props-can" style="visibility: hidden">
                                 <span class="sku-line">颜色：10#蜜橘色</span>
                                 <span class="sku-line">包装：两支手袋装（送彩带）</span>
                                 <span tabindex="0" class="btn-edit-sku theme-login">修改</span>
