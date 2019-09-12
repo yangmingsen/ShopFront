@@ -9,28 +9,45 @@
 <link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
 
 <link href="../css/sustyle.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js">  </script>
+    <script type="text/javascript" src="../js/base.js">  </script>
+    <script type="text/javascript" src="../js/controller/succController.js">  </script>
+
 <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
 
 </head>
 
-<body>
+<body ng-app="shopFront" ng-controller="succControler" ng-init="load()">
 
 
 <!--顶部导航条 -->
 <div class="am-container header">
-  <ul class="message-l">
-    <div class="topMessage">
-     <div class="menu-hd">
-       <a href="#" target="_top" class="h">亲，请登录</a>
-       <a href="#" target="_top">免费注册</a>
-     </div></div>
-  </ul>
-  <ul class="message-r">
-    <div class="topMessage home"><div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div></div>
-    <div class="topMessage my-shangcheng"><div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div></div>
-    <div class="topMessage mini-cart"><div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div></div>
-    <div class="topMessage favorite"><div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-  </ul>
+    <ul class="message-l">
+        <div class="topMessage">
+            <div ng-if="username==''" class="menu-hd">
+                <a href="./login.html" target="_top" class="h">亲，请登录</a>
+                <a href="./register.html" target="_top">免费注册</a>
+            </div>
+            <div ng-if="username!=''" class="menu-hd">
+                <a href="#" target="_top" class="h">欢迎您,{{username}}</a>
+            </div>
+        </div>
+    </ul>
+    <ul class="message-r">
+        <div class="topMessage home">
+            <div class="menu-hd"><a href="./home.html" target="_top" class="h">商城首页</a></div>
+        </div>
+        <div class="topMessage my-shangcheng">
+            <div class="menu-hd MyShangcheng"><a href="../person/order.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+        </div>
+        <div class="topMessage mini-cart">
+            <div class="menu-hd"><a id="mc-menu-hd" href="./shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+        </div>
+        <div class="topMessage favorite">
+            <div class="menu-hd"><a href="./pay.html" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>结算</span></a></div>
+        </div>
+    </ul>
 </div>
 
 <!--悬浮搜索框-->
@@ -58,11 +75,11 @@
    <h2>您已成功付款</h2>
    <div class="successInfo">
      <ul>
-       <li>付款金额<em>¥9.90</em></li>
+
        <div class="user-info">
-         <p>收货人：艾迪</p>
+         <p>收货人：杨铭森</p>
          <p>联系电话：15871145629</p>
-         <p>收货地址：湖北省 武汉市 武昌区 东湖路75号众环大厦</p>
+         <p>收货地址：广东省 中山市 火炬开发区 德创智谷22号</p>
        </div>
              请认真核对您的收货信息，如有错误请联系客服
                                

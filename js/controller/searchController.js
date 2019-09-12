@@ -1,11 +1,19 @@
-app.controller('searchController',function ($scope,$location, searchService) {
+app.controller('searchController',function ($scope,$location,serviceShareData, searchService) {
     $scope.searchMap={'keywords':''};//搜索对象
 
     //加载查询字符串
     $scope.loadkeywords=function(){
         $scope.searchMap.keywords=  $location.search()['keywords'];
         $scope.search();
-    }
+
+        var user = serviceShareData.getData("username");
+        if (user != null) {
+            $scope.username=user;
+        } else {
+            $scope.username="";
+        }
+
+    };
 
     $scope.currentPage=0;//设置当前页是 0
     $scope.listsPerPage = 12;//设置每页显示12个
