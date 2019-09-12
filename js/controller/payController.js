@@ -12,6 +12,7 @@ app.controller('payController',function ($scope,payService,serviceShareData) {
             location.href="./login.html";
             return;
         }
+
         console.log("usr = "+user);
 
         $scope.cartMap.username=user;
